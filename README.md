@@ -6,8 +6,17 @@ Sistema que recibe datos de un cliente y comprueba si es probable que cancele el
 ``` R
 📁 main/
 ├── 01_ETL_hackathon.ipynb
-├── 02_Hackathon_modelo_2.0.ipynb
-└── 03_Hackathon_modelo_2_3 Aa // 2.4 Ga // 2.5 Jh // 2.6 Aa
+├── 02_Modelado_hackathon.ipynb
+└── 03_Optimizacion_modelo_hackathon.ipynb
+└── hackathon_model_ready.csv
+└── README.md
+
+
+📁 Deployment/ <=== Carpeta de despliegue con modelo champion y dependencias
+├── README.md
+├── model_definition.py
+├── modelo_champion_churn_ensemble.pkl
+└── requirements_api.txt
 
 └── 📁 Experimentos/  <=== Queda como evidencia de nuestro avance
     ├── 📁 Limpieza_datos/
