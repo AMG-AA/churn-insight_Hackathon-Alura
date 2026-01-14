@@ -15,6 +15,7 @@ Sistema que recibe datos de un cliente y comprueba si es probable que cancele el
 📁 Deployment/ <=== Carpeta de despliegue con modelo champion y dependencias
 ├── README.md
 ├── model_definition.py
+├── model_test.py
 ├── modelo_champion_churn_ensemble.pkl
 └── requirements_api.txt
 
