@@ -197,8 +197,8 @@ El modelo puede ser cargado por la API para realizar predicciones en tiempo real
 
 ---
 
-## 13. Estructura de proyecto
-
+## 13.Estructura del proyecto / churn-insight_Hackathon-Alura
+``` R
 📁 main/
 ├── 01_ETL_hackathon.ipynb
 ├── 02_Modelado_hackathon.ipynb
@@ -253,6 +253,7 @@ El modelo puede ser cargado por la API para realizar predicciones en tiempo real
         │   └── Hackathon_modelo_2_4.ipynb
         └── 📁 Jhovan/
             └── Hackathon_modelo_2_5.ipynb
+```
 
 ---
 
