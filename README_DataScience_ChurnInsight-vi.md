@@ -115,9 +115,14 @@ En esta fase se entrenaron distintos modelos de clasificación para establecer u
 - Precision  
 - Recall  
 - F1-score  
-- ROC-AUC  
+- ROC-AUC
 
-**Resultado:**  
+###  Comparativa final de modelos 
+
+<img width="1384" height="684" alt="image" src="https://github.com/user-attachments/assets/4391d82d-f96d-4ca6-ad29-da4db410d1b9" />
+
+**Resultado:** 
+
 Se identificaron modelos con mejor capacidad predictiva y potencial de mejora.
 
 ---
@@ -132,7 +137,29 @@ En la fase final se buscó mejorar el desempeño del modelo seleccionado.
 - Comparación entre modelos optimizados y no optimizados.
 - Análisis del impacto de la optimización en métricas clave.
 
-**Resultado:**  
+<img width="980" height="583" alt="image" src="https://github.com/user-attachments/assets/62aab3ba-6522-4eff-ac56-f82d66e281bd" />
+
+## Tabla de comparción de Modelos Final**
+
+| Modelo                                   | Recall (Churn) | Precision | F1-Score | Accuracy |
+|------------------------------------------|----------------|-----------|----------|----------|
+| Regresión Logística (Full)               | 0.0449         | 0.4632    | 0.0818   | 0.7098   |
+| Random Forest (Full)                     | 0.0455         | 0.6091    | 0.0848   | 0.7166   |
+| Random Forest (8 Vars - Sugerido)         | 0.6615         | 0.3679    | 0.4728   | 0.5750   |
+| Random Forest (6 Vars - Contrato)         | 0.6676         | 0.3655    | 0.4723   | 0.5702   |
+| Random Forest (Ranking - Data-Driven)    | 0.6948         | 0.3588    | 0.4733   | 0.5544   |
+| XGBoost (6 Vars - Contrato)               | 0.7158         | 0.3584    | 0.4777   | 0.5489   |
+| Ensamble (RF + XGBoost)                  | 0.6975         | 0.3584    | 0.4735   | 0.5530   |
+
+**Conclusión:**
+El análisis final confirma que XGBoost (6 Vars - Contrato) es el modelo con mejor desempeño en la métrica más crítica para el negocio, el Recall de Churn, maximizando la detección de clientes en riesgo.
+
+El Ensamble (RF + XGBoost) ofrece un rendimiento muy cercano y robusto, con una leve mejora en Accuracy, lo que lo convierte en una alternativa válida si se prioriza estabilidad global.
+
+Por su parte, el Random Forest (6 Vars) sigue siendo un modelo sólido, aunque ligeramente inferior en capacidad de detección de churn frente a las otras dos opciones.
+
+**Resultado:**
+
 Modelo final optimizado, con mejor equilibrio entre rendimiento y capacidad de generalización.
 
 ---
@@ -169,12 +196,73 @@ El modelo puede ser cargado por la API para realizar predicciones en tiempo real
 
 ---
 
-## 13. Notas finales
+## 13. Estructura de proyecto
+
+📁 main/
+├── 01_ETL_hackathon.ipynb
+├── 02_Modelado_hackathon.ipynb
+└── 03_Optimizacion_modelo_hackathon.ipynb
+└── hackathon_model_ready.csv
+└── README.md
+
+
+📁 Deployment/ <=== Carpeta de despliegue con modelo champion y dependencias
+├── README.md
+├── model_definition.py
+├── model_test.py
+├── modelo_champion_churn_ensemble.pkl
+└── requirements_api.txt
+
+└── 📁 Experimentos/  <=== Queda como evidencia de nuestro avance
+    ├── 📁 Limpieza_datos/
+    │   ├── 📁 Aaron/
+    │   │   └── ETL_hackathon.ipynb
+    │   ├── 📁 Cuaderno_analisis/
+    │   │   └── Analisis de telecom proyecto hackaton.ipynb
+    │   ├── 📁 Dataset_telecom_(cell2cell)/
+    │   │   ├── cell2celltrain.csv
+    │   │   └── cell2celltrain.csv.zip
+    │   ├── 📁 Galia/
+    │   │   ├── Base de datos inicial.csv
+    │   │   ├── Churn_limpieza_Galia-vs0.ipynb
+    │   │   ├── Limpieza_vs1.ipynb
+    │   │   ├── Entrenamiento_V2.ipynb
+    │   │   ├── dataset_churn_listo_para_entrenar.parquet
+    │   │   └── readme.md
+    │   ├── 📁 Jhovan/
+    │   │   └── Analisis de telecom proyecto hackaton.ipynb
+    │   └── 📁 Kevin/
+    │       ├── Kevin Cancino 02.ipynb
+    │       └── Kevin_Cancino_churn.ipynb
+    │
+    ├── 📁 Modelo/ 
+    │   └── 📁 Aaron_modelo/
+    │       ├── 📁 Entrenamiento/
+    │       │   ├── Hackathon_modelo_2.1.ipynb
+    │       │   ├── Hackathon_modelo_2_2.ipynb
+    │       │   ├── hackathon_model_ready.csv
+    │       │   └── modelo_churn_6vars_contrato.pkl
+    │       └── 📁 Feature_engineering/
+    │           └── Hackathon_modelo_2_0.ipynb
+    │
+    └── 📁 Optimizacion/
+        ├── 📁 Aaron/
+        │   └── Hackathon_modelo_2_3.ipynb
+        ├── 📁 Galia/
+        │   └── Hackathon_modelo_2_4.ipynb
+        └── 📁 Jhovan/
+            └── Hackathon_modelo_2_5.ipynb
+
+---
+
+## 14. Notas finales
 
 Este proyecto fue desarrollado dentro de un **hackathon**, priorizando:
-- Claridad metodológica.
+
 - Buenas prácticas de Data Science.
 - Aplicabilidad real al negocio.
 - Facilidad de integración con sistemas externos.
 
-El trabajo del equipo de Back-end se documenta en un repositorio independiente.
+El trabajo del equipo de Back-end se documenta en carpeta independiente.
+
+## link de backend: __ __
