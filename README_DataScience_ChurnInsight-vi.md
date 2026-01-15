@@ -152,6 +152,7 @@ En la fase final se buscó mejorar el desempeño del modelo seleccionado.
 | Ensamble (RF + XGBoost)                  | 0.6975         | 0.3584    | 0.4735   | 0.5530   |
 
 **Conclusión:**
+
 El análisis final confirma que XGBoost (6 Vars - Contrato) es el modelo con mejor desempeño en la métrica más crítica para el negocio, el Recall de Churn, maximizando la detección de clientes en riesgo.
 
 El Ensamble (RF + XGBoost) ofrece un rendimiento muy cercano y robusto, con una leve mejora en Accuracy, lo que lo convierte en una alternativa válida si se prioriza estabilidad global.
